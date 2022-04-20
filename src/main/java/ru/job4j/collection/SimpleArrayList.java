@@ -62,7 +62,7 @@ public class SimpleArrayList<T> implements List<T> {
 
             @Override
             public boolean hasNext() {
-                return point < container.length;
+                return point < size;
             }
 
             @Override
@@ -74,7 +74,6 @@ public class SimpleArrayList<T> implements List<T> {
                     throw new NoSuchElementException();
                 }
                 return container[point++];
-
             }
 
         };
