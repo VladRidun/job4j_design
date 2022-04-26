@@ -12,12 +12,17 @@ public class EvenNumbersIterator implements Iterator<Integer> {
         this.data = data;
     }
 
+
     @Override
     public boolean hasNext() {
-        while (index < data.length && data[index] % 2 != 0) {
-            index++;
+        boolean rsl = false;
+        if (data.length > index) {
+            if (data[index] % 2 == 0) {
+                rsl = true;
+            }
         }
-        return index < data.length;
+        return rsl;
+
     }
 
     @Override
