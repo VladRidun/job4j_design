@@ -12,11 +12,11 @@ public class ForwardLinked<T> implements Iterable<T> {
             first = node;
             return;
         }
-        Node<T> last = first;
-        while (last.next != null) {
-            last = last.next;
+        Node<T> tail = first;
+        while (tail.next != null) {
+            tail = tail.next;
         }
-        last.next = node;
+        tail.next = node;
     }
 
     public T deleteFirst() {
@@ -24,7 +24,10 @@ public class ForwardLinked<T> implements Iterable<T> {
             throw new NoSuchElementException();
         }
         T value = first.value;
-        first = first.next;
+        Node<T> next = first.next;
+        first.next = null;
+        first.value = null;
+        first = next;
         return value;
     }
 
@@ -50,13 +53,13 @@ public class ForwardLinked<T> implements Iterable<T> {
         };
     }
 
-private static class Node<T> {
-    T value;
-    Node<T> next;
+    private static class Node<T> {
+        T value;
+        Node<T> next;
 
-    public Node(T value, Node<T> next) {
-        this.value = value;
-        this.next = next;
+        public Node(T value, Node<T> next) {
+            this.value = value;
+            this.next = next;
+        }
     }
-}
 }
