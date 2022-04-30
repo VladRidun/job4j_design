@@ -55,7 +55,6 @@ public class SimpleArrayList<T> implements List<T> {
         return container[index];
     }
 
-
     @Override
     public Iterator<T> iterator() {
 
