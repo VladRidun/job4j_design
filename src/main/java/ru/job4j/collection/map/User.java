@@ -20,7 +20,7 @@ public class User {
     public static void main(String[] args) {
 
         User user1 = new User("Vlad", 1, new GregorianCalendar(1989, Calendar.OCTOBER, 05));
-        User user2 = new User("Marina", 1, new GregorianCalendar(1990, Calendar.JULY, 17));
+        User user2 = new User("Vlad", 1, new GregorianCalendar(1989, Calendar.OCTOBER, 05));
         Map<User, Object> map1 = new HashMap<>();
         map1.put(user1, new Object());
         map1.put(user2, new Object());
