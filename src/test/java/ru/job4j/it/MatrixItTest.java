@@ -1,12 +1,11 @@
 package ru.job4j.it;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
-
-
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.NoSuchElementException;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class MatrixItTest {
     @Test
@@ -15,7 +14,7 @@ public class MatrixItTest {
                 {1}
         };
         MatrixIt it = new MatrixIt(in);
-        assertThat(it.next(), is(1));
+        assertThat(it.next()).isEqualTo(1);
     }
 
     @Test
@@ -24,7 +23,7 @@ public class MatrixItTest {
                 {}, {1}
         };
         MatrixIt it = new MatrixIt(in);
-        assertThat(it.next(), is(1));
+        assertThat(it.next()).isEqualTo(1);
     }
 
     @Test
@@ -33,7 +32,7 @@ public class MatrixItTest {
                 {}, {1}
         };
         MatrixIt it = new MatrixIt(in);
-        assertThat(it.hasNext(), is(true));
+        assertThat(it.hasNext()).isTrue();
     }
 
     @Test
@@ -42,9 +41,9 @@ public class MatrixItTest {
                 {1}, {2, 3}
         };
         MatrixIt it = new MatrixIt(in);
-        assertThat(it.next(), is(1));
-        assertThat(it.next(), is(2));
-        assertThat(it.next(), is(3));
+        assertThat(it.next()).isEqualTo(1);
+        assertThat(it.next()).isEqualTo(2);
+        assertThat(it.next()).isEqualTo(3);
     }
 
     @Test
@@ -53,8 +52,8 @@ public class MatrixItTest {
                 {1}, {}, {}, {}, {2}
         };
         MatrixIt it = new MatrixIt(in);
-        assertThat(it.next(), is(1));
-        assertThat(it.next(), is(2));
+        assertThat(it.next()).isEqualTo(1);
+        assertThat(it.next()).isEqualTo(2);
     }
 
     @Test
@@ -63,16 +62,19 @@ public class MatrixItTest {
                 {}
         };
         MatrixIt it = new MatrixIt(in);
-        assertThat(it.hasNext(), is(false));
+        assertThat(it.hasNext()).isFalse();
     }
 
-    @Test(expected = NoSuchElementException.class)
+    @Test
     public void whenEmptyThenNext() {
-        int[][] in = {
-                {}
-        };
-        MatrixIt it = new MatrixIt(in);
-        it.next();
+        assertThrows(NoSuchElementException.class,
+                () -> {
+                    int[][] in = {
+                            {}
+                    };
+                    MatrixIt it = new MatrixIt(in);
+                    it.next();
+                });
     }
 
     @Test
@@ -81,14 +83,14 @@ public class MatrixItTest {
                 {}, {1}
         };
         MatrixIt it = new MatrixIt(in);
-        assertThat(it.hasNext(), is(true));
-        assertThat(it.hasNext(), is(true));
+        assertThat(it.hasNext()).isTrue();
+        assertThat(it.hasNext()).isTrue();
     }
 
     @Test
     public void whenNoElements() {
         int[][] in = {{}, {}, {}};
         MatrixIt it = new MatrixIt(in);
-        assertThat(it.hasNext(), is(false));
+        assertThat(it.hasNext()).isFalse();
     }
 }

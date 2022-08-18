@@ -1,25 +1,26 @@
-package ru.job4j.collection.set;
+package ru.job4j.set;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import ru.job4j.collection.set.Set;
+import ru.job4j.collection.set.SimpleSet;
 
-import static org.junit.Assert.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
-public class SimpleSetTest {
+class SimpleSetTest {
 
     @Test
-    public void whenAddNonNull() {
+    void whenAddNonNull() {
         Set<Integer> set = new SimpleSet<>();
-        assertTrue(set.add(1));
-        assertTrue(set.contains(1));
-        assertFalse(set.add(1));
+        assertThat(set.add(1)).isTrue();
+        assertThat(set.contains(1)).isTrue();
+        assertThat(set.add(1)).isFalse();
     }
 
     @Test
-    public void whenAddNull() {
+    void whenAddNull() {
         Set<Integer> set = new SimpleSet<>();
-        assertTrue(set.add(null));
-        assertTrue(set.contains(null));
-        assertFalse(set.add(null));
+        assertThat(set.add(null)).isTrue();
+        assertThat(set.contains(null)).isTrue();
+        assertThat(set.add(null)).isFalse();
     }
-
 }

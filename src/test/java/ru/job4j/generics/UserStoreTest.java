@@ -1,10 +1,8 @@
 package ru.job4j.generics;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import static org.assertj.core.api.Assertions.assertThat;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.*;
 
 public class UserStoreTest {
 
@@ -13,7 +11,7 @@ public class UserStoreTest {
         UserStore store = new UserStore();
         store.add(new User("1", "Petr"));
         User result = store.findById("1");
-        assertThat(result.getUsername(), is("Petr"));
+        assertThat(result.getUsername()).isEqualTo("Petr");
     }
 
     @Test
@@ -21,7 +19,7 @@ public class UserStoreTest {
         UserStore store = new UserStore();
         store.add(new User("1", "Petr"));
         User result = store.findById("10");
-        assertNull(result);
+        assertThat(result).isEqualTo(null);
     }
 
     @Test
@@ -30,7 +28,7 @@ public class UserStoreTest {
         store.add(new User("1", "Petr"));
         store.add(new User("1", "Maxim"));
         User result = store.findById("1");
-        assertThat(result.getUsername(), is("Petr"));
+        assertThat(result.getUsername()).isEqualTo("Petr");
     }
 
     @Test
@@ -39,7 +37,7 @@ public class UserStoreTest {
         store.add(new User("1", "Petr"));
         store.replace("1", new User("1", "Maxim"));
         User result = store.findById("1");
-        assertThat(result.getUsername(), is("Maxim"));
+        assertThat(result.getUsername()).isEqualTo("Maxim");
     }
 
     @Test
@@ -48,7 +46,7 @@ public class UserStoreTest {
         store.add(new User("1", "Petr"));
         store.replace("10", new User("10", "Maxim"));
         User result = store.findById("1");
-        assertThat(result.getUsername(), is("Petr"));
+        assertThat(result.getUsername()).isEqualTo("Petr");
     }
 
     @Test
@@ -57,7 +55,7 @@ public class UserStoreTest {
         store.add(new User("1", "Petr"));
         store.delete("1");
         User result = store.findById("1");
-        assertNull(result);
+        assertThat(result).isEqualTo(null);
     }
 
     @Test
@@ -66,6 +64,6 @@ public class UserStoreTest {
         store.add(new User("1", "Petr"));
         store.delete("10");
         User result = store.findById("1");
-        assertThat(result.getUsername(), is("Petr"));
+        assertThat(result.getUsername()).isEqualTo("Petr");
     }
 }

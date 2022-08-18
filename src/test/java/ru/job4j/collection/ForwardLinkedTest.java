@@ -1,28 +1,34 @@
 package ru.job4j.collection;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-import static junit.framework.TestCase.assertFalse;
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 
 public class ForwardLinkedTest {
 
-    @Test(expected = NoSuchElementException.class)
+    @Test
     public void whenDeleteFirst() {
-        ForwardLinked<Integer> linked = new ForwardLinked<>();
-        linked.add(1);
-        linked.deleteFirst();
-        linked.iterator().next();
+        assertThrows(NoSuchElementException.class,
+                () -> {
+                    ForwardLinked<Integer> linked = new ForwardLinked<>();
+                    linked.add(1);
+                    linked.deleteFirst();
+                    linked.iterator().next();
+                });
     }
 
-    @Test(expected = NoSuchElementException.class)
+    @Test
     public void whenDeleteEmptyLinked() {
-        ForwardLinked<Integer> linked = new ForwardLinked<>();
-        linked.deleteFirst();
+        assertThrows(NoSuchElementException.class,
+                () -> {
+                    ForwardLinked<Integer> linked = new ForwardLinked<>();
+                    linked.deleteFirst();
+                });
     }
 
     @Test
@@ -30,9 +36,9 @@ public class ForwardLinkedTest {
         ForwardLinked<Integer> linked = new ForwardLinked<>();
         linked.add(1);
         linked.add(2);
-        assertThat(linked.deleteFirst(), is(1));
+        assertThat(linked.deleteFirst()).isEqualTo(1);
         Iterator<Integer> it = linked.iterator();
-        assertThat(it.next(), is(2));
+        assertThat(it.next()).isEqualTo(2);
     }
 
     @Test
@@ -41,8 +47,8 @@ public class ForwardLinkedTest {
         linked.add(1);
         linked.add(2);
         Iterator<Integer> it = linked.iterator();
-        assertThat(it.next(), is(1));
-        assertThat(it.next(), is(2));
+        assertThat(it.next()).isEqualTo(1);
+        assertThat(it.next()).isEqualTo(2);
     }
 
     @Test
@@ -52,21 +58,21 @@ public class ForwardLinkedTest {
         linked.add(2);
         linked.revert();
         Iterator<Integer> it = linked.iterator();
-        assertThat(it.next(), is(2));
-        assertThat(it.next(), is(1));
+        assertThat(it.next()).isEqualTo(2);
+        assertThat(it.next()).isEqualTo(1);
     }
 
     @Test
     public void whenSize0ThenReturnFalse() {
         ForwardLinked<Integer> emptyList = new ForwardLinked<>();
-        assertFalse(emptyList.revert());
+        assertThat(emptyList.revert()).isFalse();
     }
 
     @Test
     public void whenSize1ThenReturnFalse() {
         ForwardLinked<Integer> singleList = new ForwardLinked<>();
         singleList.add(1);
-        assertFalse(singleList.revert());
+        assertThat(singleList.revert()).isFalse();
     }
 
 }

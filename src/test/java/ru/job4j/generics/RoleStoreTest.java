@@ -1,10 +1,8 @@
 package ru.job4j.generics;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import static org.assertj.core.api.Assertions.assertThat;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.*;
 
 public class RoleStoreTest {
 
@@ -13,7 +11,7 @@ public class RoleStoreTest {
         UserStore store = new UserStore();
         store.add(new User("1", "Admin"));
         User result = store.findById("1");
-        assertThat(result.getUsername(), is("Admin"));
+        assertThat(result.getUsername()).isEqualTo("Admin");
     }
 
     @Test
@@ -21,7 +19,7 @@ public class RoleStoreTest {
         UserStore store = new UserStore();
         store.add(new User("1", "Admin"));
         User result = store.findById("2");
-        assertNull(result);
+        assertThat((result)).isEqualTo(null);
     }
 
     @Test
@@ -30,7 +28,7 @@ public class RoleStoreTest {
         store.add(new User("1", "User"));
         store.add(new User("1", "SuperAdmin"));
         User result = store.findById("1");
-        assertThat(result.getUsername(), is("User"));
+        assertThat(result.getUsername()).isEqualTo("User");
     }
 
     @Test
@@ -39,7 +37,7 @@ public class RoleStoreTest {
         store.add(new User("1", "Admin"));
         store.replace("1", new User("1", "User"));
         User result = store.findById("1");
-        assertThat(result.getUsername(), is("User"));
+        assertThat(result.getUsername()).isEqualTo("User");
     }
 
     @Test
@@ -48,7 +46,7 @@ public class RoleStoreTest {
         store.add(new User("1", "User"));
         store.replace("2", new User("2", "Admin"));
         User result = store.findById("1");
-        assertThat(result.getUsername(), is("User"));
+        assertThat(result.getUsername()).isEqualTo("User");
     }
 
     @Test
@@ -57,7 +55,7 @@ public class RoleStoreTest {
         store.add(new User("1", "Admin"));
         store.delete("1");
         User result = store.findById("1");
-        assertNull(result);
+        assertThat((result)).isEqualTo(null);
     }
 
     @Test
@@ -66,6 +64,6 @@ public class RoleStoreTest {
         store.add(new User("1", "SuperUser"));
         store.delete("2");
         User result = store.findById("1");
-        assertThat(result.getUsername(), is("SuperUser"));
+        assertThat(result.getUsername()).isEqualTo("SuperUser");
     }
 }
