@@ -51,7 +51,7 @@ public class SimpleMap<K, V> implements Map<K, V> {
     public boolean checkKey(K key) {
         int index = indexFor(hash(key));
         K elKey = table[index] != null ? table[index].key : null;
-        return (hash(key) == hash(elKey) && (key == elKey) || key.equals(elKey));
+        return (hash(key) == hash(elKey) && (key == elKey));
     }
 
     @Override
