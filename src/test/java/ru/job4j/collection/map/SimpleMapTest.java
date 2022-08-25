@@ -10,8 +10,6 @@ import java.util.NoSuchElementException;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-;
-
 class SimpleMapTest {
 
     private final SimpleMap<Integer, String> map = new SimpleMap<>();
