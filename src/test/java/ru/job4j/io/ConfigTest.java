@@ -28,12 +28,10 @@ class ConfigTest {
     @Test
     public void whenPairWithExc() {
         assertThrows(IllegalArgumentException.class,
-                () ->
-                {
+                () -> {
                     String path = "./data/pair_with_comment.txt";
                     Config config = new Config(path);
                     config.value("hibernate.connection.password=");
                 });
     }
-
 }
