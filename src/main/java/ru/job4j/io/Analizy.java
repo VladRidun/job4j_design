@@ -14,10 +14,10 @@ public class Analizy {
             String addLine = null;
             boolean check = true;
             while ((contentLine = in.readLine()) != null) {
-                if (check && contentLine.startsWith("500")) {
+                if (check && (contentLine.startsWith("400") || contentLine.startsWith("500"))) {
                     addLine = contentLine.substring(3);
                     check = false;
-                } else if (!check && contentLine.startsWith("200")) {
+                } else if (!check && (contentLine.startsWith("200") || contentLine.startsWith("300"))) {
                     addLine = addLine + ";" + contentLine.substring(3) + ";";
                     check = true;
                     filterList.add(addLine);
