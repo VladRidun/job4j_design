@@ -19,10 +19,7 @@ class ConfigTest {
 
     @Test
     void whenPairWithComment() {
-        String path = "./data/pair_with_comment.properties";
-        Config config = new Config(path);
-        config.load();
-        assertThat(config.value("hibernate.connection.username")).isEqualTo("postgres");
+
     }
 
     @Test
