@@ -22,7 +22,7 @@ public class Search {
     }
 
     public static void validate(String[] args) {
-        if (args.length != 2) {
+        if (args.length != 3) {
             throw new IllegalArgumentException("Use two arguments: root folder, file extension");
         }
         Path path = Path.of(args[0]);
