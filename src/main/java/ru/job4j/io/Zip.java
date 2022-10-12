@@ -38,8 +38,13 @@ public class Zip {
     }
 
     public static void main(String[] args) throws IOException {
-        validate(args);
         ArgsName argsName = ArgsName.of(args);
+        String[] arrayArgs = {
+                argsName.get("d"),
+                argsName.get("e"),
+                argsName.get("o")
+        };
+        validate(arrayArgs);
         List<Path> sources = search(Path.of(argsName.get("d")), p -> !p.toFile().getName().endsWith(argsName.get("e")));
         packFiles(sources, new File(argsName.get("o")));
     }
