@@ -14,7 +14,6 @@ public class ConsoleChat {
     private final String path;
     private final String botAnswers;
 
-
     public ConsoleChat(String path, String botAnswers) {
         this.path = path;
         this.botAnswers = botAnswers;
@@ -23,15 +22,16 @@ public class ConsoleChat {
     public void run() {
         Scanner input = new Scanner(System.in);
         List<String> log = new ArrayList<>();
+        var randomAnswers = readPhrases();
         System.out.println("Чат открыт");
         String message = input.nextLine();
         log.add(message);
         while (!message.equalsIgnoreCase(OUT)) {
-                message = readPhrases();
-                log.add(message);
-                System.out.println(message);
-                message = input.nextLine();
-                log.add(message);
+            message = randomAnswers.get(new Random().nextInt(randomAnswers.size()));
+            log.add(message);
+            System.out.println(message);
+            message = input.nextLine();
+            log.add(message);
             if (message.equals(STOP)) {
                 do {
                     message = input.nextLine();
@@ -43,14 +43,14 @@ public class ConsoleChat {
         input.close();
     }
 
-    private String readPhrases() {
+    private List<String> readPhrases() {
         List<String> phrases = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(botAnswers))) {
             br.lines().forEach(phrases::add);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return phrases.get(new Random().nextInt(phrases.size()));
+        return phrases;
     }
 
     private void saveLog(List<String> log) {
