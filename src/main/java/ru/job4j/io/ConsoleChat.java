@@ -13,30 +13,32 @@ public class ConsoleChat {
     private static final String CONTINUE = "продолжить";
     private final String path;
     private final String botAnswers;
+    private Random random;
 
     public ConsoleChat(String path, String botAnswers) {
         this.path = path;
         this.botAnswers = botAnswers;
+        this.random = new Random();
     }
 
     public void run() {
-        Scanner input = new Scanner(System.in);
+        var input = new Scanner(System.in);
         List<String> log = new ArrayList<>();
         var randomAnswers = readPhrases();
         System.out.println("Чат открыт");
         String message = input.nextLine();
         log.add(message);
-        while (!message.equalsIgnoreCase(OUT)) {
-            message = randomAnswers.get(new Random().nextInt(randomAnswers.size()));
+        while (!OUT.equalsIgnoreCase(message)) {
+            message = randomAnswers.get(random.nextInt(randomAnswers.size()));
             log.add(message);
             System.out.println(message);
             message = input.nextLine();
             log.add(message);
-            if (message.equals(STOP)) {
+            if (STOP.equals(message)) {
                 do {
                     message = input.nextLine();
                     log.add(message);
-                } while (!message.equalsIgnoreCase(CONTINUE));
+                } while (!CONTINUE.equalsIgnoreCase(message));
             }
         }
         saveLog(log);
@@ -45,7 +47,7 @@ public class ConsoleChat {
 
     private List<String> readPhrases() {
         List<String> phrases = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(botAnswers))) {
+        try (var br = new BufferedReader(new FileReader(botAnswers))) {
             br.lines().forEach(phrases::add);
         } catch (IOException e) {
             e.printStackTrace();
@@ -54,7 +56,7 @@ public class ConsoleChat {
     }
 
     private void saveLog(List<String> log) {
-        try (PrintWriter pw = new PrintWriter(new FileWriter(path, Charset.forName("WINDOWS-1251"), true))) {
+        try (var pw = new PrintWriter(new FileWriter(path, Charset.forName("WINDOWS-1251"), true))) {
             log.forEach(pw::println);
         } catch (IOException e) {
             e.printStackTrace();
