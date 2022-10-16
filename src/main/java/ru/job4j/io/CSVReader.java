@@ -44,12 +44,11 @@ public class CSVReader {
             ex.printStackTrace();
         }
         String[] inputLine = line.split(delimiter);
+        int j = 0;
         for (String f : filterArr) {
             for (int i = 0; i < inputLine.length; i++) {
                 if (f.equals(inputLine[i])) {
-                    for (int j = 0; 0 < indexArr.length; j++) {
-                        indexArr[j] = i;
-                    }
+                    indexArr[j++] = i;
                 }
             }
         }
