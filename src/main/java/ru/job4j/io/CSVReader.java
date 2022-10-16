@@ -13,8 +13,10 @@ public class CSVReader {
         String filters = argsName.get("filter");
         String delimiter = argsName.get("delimiter");
         Path path = Paths.get(argsName.get("path"));
+        String out = argsName.get("out");
         StringJoiner stringJoiner = new StringJoiner(delimiter);
         Integer[] indexArr = getIndexArray(path, delimiter, filters);
+
         try {
             var scanner = new Scanner(path);
             while (scanner.hasNextLine()) {
@@ -22,11 +24,32 @@ public class CSVReader {
                 for (Integer i : indexArr) {
                     stringJoiner.add(line[i]);
                 }
+                strings.add(stringJoiner.toString());
+                stringJoiner = new StringJoiner(delimiter);
             }
         } catch (FileNotFoundException ex) {
             ex.printStackTrace();
         } catch (IOException ex) {
             ex.printStackTrace();
+        }
+        out(out, strings, delimiter);
+    }
+
+    public static void out(String out, List<String> outArr, String delimiter) {
+        if ("stdout".equals(out)) {
+            for (String str : outArr) {
+                System.out.println(str);
+            }
+        } else if (!out.isEmpty()) {
+            Path path = Paths.get(out);
+            try (var pr = new PrintWriter(
+                    new BufferedOutputStream(
+                            new FileOutputStream(path.toString())
+                    ))) {
+                outArr.forEach(pr::println);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -44,12 +67,11 @@ public class CSVReader {
             ex.printStackTrace();
         }
         String[] inputLine = line.split(delimiter);
+        int j = 0;
         for (String f : filterArr) {
             for (int i = 0; i < inputLine.length; i++) {
                 if (f.equals(inputLine[i])) {
-                    for (int j = 0; 0 < indexArr.length; j++) {
-                        indexArr[j] = i;
-                    }
+                    indexArr[j++] = i;
                 }
             }
         }
