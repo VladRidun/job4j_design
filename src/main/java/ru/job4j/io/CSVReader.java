@@ -7,7 +7,7 @@ import java.nio.file.Paths;
 import java.util.*;
 
 public class CSVReader {
-    public static void handle(ArgsName argsName) throws Exception {
+    public static void handle(ArgsName argsName) {
         validate(argsName);
         List<String> strings = new ArrayList<String>();
         String filters = argsName.get("filter");
@@ -17,8 +17,7 @@ public class CSVReader {
         StringJoiner stringJoiner = new StringJoiner(delimiter);
         Integer[] indexArr = getIndexArray(path, delimiter, filters);
 
-        try {
-            var scanner = new Scanner(path);
+        try (var scanner = new Scanner(path)) {
             while (scanner.hasNextLine()) {
                 String[] line = scanner.nextLine().split(argsName.get("delimiter"));
                 for (Integer i : indexArr) {
@@ -27,20 +26,18 @@ public class CSVReader {
                 strings.add(stringJoiner.toString());
                 stringJoiner = new StringJoiner(delimiter);
             }
-        } catch (FileNotFoundException ex) {
-            ex.printStackTrace();
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-        out(out, strings, delimiter);
+        out(out, strings);
     }
 
-    public static void out(String out, List<String> outArr, String delimiter) {
+    public static void out(String out, List<String> outArr) {
         if ("stdout".equals(out)) {
             for (String str : outArr) {
                 System.out.println(str);
             }
-        } else if (!out.isEmpty()) {
+        } else {
             Path path = Paths.get(out);
             try (var pr = new PrintWriter(
                     new BufferedOutputStream(
@@ -83,22 +80,22 @@ public class CSVReader {
         if (!Files.exists(path) && !Files.isDirectory(path)) {
             throw new IllegalArgumentException("Root folder is null. Usage ROOT_FOLDER");
         }
-        if (!args.get("delimiter").equals(";")) {
+        if (!";".equals(args.get("delimiter"))) {
             throw new IllegalArgumentException("Use delimiter: ;");
         }
-        if (args.get("out").isEmpty()) {
+        if (!"stdout".equals(args.get("out")) || !args.get("out").endsWith(".csv")) {
             throw new IllegalArgumentException("output not specified");
         }
-        if (args.get("filter").isEmpty()) {
+        if (!args.get("filter").isEmpty()) {
             throw new IllegalArgumentException("filter not specified");
         }
     }
 
     public static void main(String[] args) throws Exception {
-        ArgsName argsName = ArgsName.of(args);
         if (args.length != 4) {
             throw new IllegalArgumentException("Use 4 arguments: file, delimiter, out, filter ");
         }
+        ArgsName argsName = ArgsName.of(args);
         handle(argsName);
     }
 }
