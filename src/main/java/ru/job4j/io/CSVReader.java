@@ -79,14 +79,6 @@ public class CSVReader {
     }
 
     public static void validate(ArgsName args) {
-        var argArr = new ArrayList<String>();
-        argArr.add(args.get("path"));
-        argArr.add(args.get("delimiter"));
-        argArr.add(args.get("out"));
-        argArr.add(args.get("filter"));
-        if (argArr.size() != 4) {
-            throw new IllegalArgumentException("Use 4 arguments: file, delimiter, out, filter ");
-        }
         Path path = Path.of(args.get("path"));
         if (!Files.exists(path) && !Files.isDirectory(path)) {
             throw new IllegalArgumentException("Root folder is null. Usage ROOT_FOLDER");
@@ -100,5 +92,13 @@ public class CSVReader {
         if (args.get("filter").isEmpty()) {
             throw new IllegalArgumentException("filter not specified");
         }
+    }
+
+    public static void main(String[] args) throws Exception {
+        ArgsName argsName = ArgsName.of(args);
+        if (args.length != 4) {
+            throw new IllegalArgumentException("Use 4 arguments: file, delimiter, out, filter ");
+        }
+        handle(argsName);
     }
 }
