@@ -39,10 +39,7 @@ public class CSVReader {
             }
         } else {
             Path path = Paths.get(out);
-            try (var pr = new PrintWriter(
-                    new BufferedOutputStream(
-                            new FileOutputStream(path.toString())
-                    ))) {
+            try (var pr = new PrintWriter(new BufferedOutputStream(new FileOutputStream(path.toString())))) {
                 outArr.forEach(pr::println);
             } catch (IOException e) {
                 e.printStackTrace();
@@ -83,17 +80,15 @@ public class CSVReader {
         if (!";".equals(args.get("delimiter"))) {
             throw new IllegalArgumentException("Use delimiter: ;");
         }
-        if (!"stdout".equals(args.get("out")) || !args.get("out").endsWith(".csv")) {
-            throw new IllegalArgumentException("output not specified");
-        }
-        if (!args.get("filter").isEmpty()) {
-            throw new IllegalArgumentException("filter not specified");
-        }
+        args.get("filter");
     }
 
     public static void main(String[] args) throws Exception {
         if (args.length != 4) {
             throw new IllegalArgumentException("Use 4 arguments: file, delimiter, out, filter ");
+        }
+        if (!"stdout".equals(args[2]) || !args[2].endsWith(".csv")) {
+            throw new IllegalArgumentException("output not specified");
         }
         ArgsName argsName = ArgsName.of(args);
         handle(argsName);
