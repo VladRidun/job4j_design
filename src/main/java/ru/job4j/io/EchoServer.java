@@ -18,6 +18,7 @@ public class EchoServer {
                     if (str.contains("/?msg=Bye")) {
                         server.close();
                     }
+                    out.flush();
                 }
             }
         }
