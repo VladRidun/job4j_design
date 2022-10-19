@@ -51,12 +51,8 @@ public class CSVReader {
         String[] filterArr = filters.split(",");
         Integer[] indexArr = new Integer[filterArr.length];
         String line = null;
-        try {
-            FileReader fr = new FileReader((path).toString());
-            BufferedReader reader = new BufferedReader(fr);
+        try (var reader = new BufferedReader(new FileReader((path).toString()))) {
             line = reader.readLine();
-        } catch (FileNotFoundException ex) {
-            ex.printStackTrace();
         } catch (IOException ex) {
             ex.printStackTrace();
         }
@@ -80,15 +76,15 @@ public class CSVReader {
         if (!";".equals(args.get("delimiter"))) {
             throw new IllegalArgumentException("Use delimiter: ;");
         }
+        if (!"stdout".equals(args.get("out")) && !args.get("out").endsWith(".csv")) {
+            throw new IllegalArgumentException("output not specified as .csv or stdout");
+        }
         args.get("filter");
     }
 
     public static void main(String[] args) throws Exception {
         if (args.length != 4) {
             throw new IllegalArgumentException("Use 4 arguments: file, delimiter, out, filter ");
-        }
-        if (!"stdout".equals(args[2]) || !args[2].endsWith(".csv")) {
-            throw new IllegalArgumentException("output not specified");
         }
         ArgsName argsName = ArgsName.of(args);
         handle(argsName);
