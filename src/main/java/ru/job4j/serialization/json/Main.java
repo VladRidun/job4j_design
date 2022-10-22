@@ -10,7 +10,6 @@ public class Main {
         final Gson gson = new GsonBuilder().create();
         System.out.println(gson.toJson(car));
 
-
         final String carJson =
                 "{"
                         + "\"producer\":lada,"
@@ -26,6 +25,6 @@ public class Main {
                         + "\"enable\":true"
                         + "}";
         final Car carMod = gson.fromJson(carJson, Car.class);
-        System.out.println(car);
+        System.out.println(carMod);
     }
 }
