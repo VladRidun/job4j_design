@@ -7,6 +7,10 @@ public class GosNumber {
         this.gosNumber = gosNumber;
     }
 
+    public String getGosNumber() {
+        return gosNumber;
+    }
+
     @Override
     public String toString() {
         return "GosNumber{"

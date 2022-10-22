@@ -21,6 +21,34 @@ public class Car {
         this.enable = enable;
     }
 
+    public String getProducer() {
+        return producer;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public String getEngineType() {
+        return engineType;
+    }
+
+    public GosNumber getGosNumber() {
+        return gosNumber;
+    }
+
+    public int getReleaseYear() {
+        return releaseYear;
+    }
+
+    public String[] getSpecs() {
+        return specs;
+    }
+
+    public boolean isEnable() {
+        return enable;
+    }
+
     @Override
     public String toString() {
         return "Car{"
