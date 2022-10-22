@@ -1,0 +1,9 @@
+<?xml version="1.1" encoding="UTF-8" ?>
+<!-- описание модели робота в формате xml -->
+<robot modelName="Striker Eureka" origin="Russia" prepared="true" weight="1.850f" height="76.2f" strength="10" armor="full" >
+<!-- описание строкового массива -->
+<weapons>
+        <weapon>gun</weapon>
+        <weapon>laser</weapon>
+</weapons>
+</robot>
