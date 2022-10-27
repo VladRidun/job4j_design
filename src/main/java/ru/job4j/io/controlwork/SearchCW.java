@@ -13,10 +13,17 @@ import java.util.List;
 import java.util.function.Predicate;
 
 public class SearchCW {
-    public static  void search(ArgsNameCW args) throws IOException {
+    public static void search(ArgsNameCW args) throws IOException {
         Path root = Path.of(args.get("d"));
         String out = args.get("o");
-        Predicate<Path> condition = p -> p.toFile().getName().endsWith(args.get("n"));
+        Predicate<Path> condition = null;
+        if ("mask".equals(args.get("t"))) {
+            condition = p -> p.toFile().getName().endsWith(args.get("n"));
+        } else if ("name".equals(args.get("t"))) {
+            condition = p -> p.toFile().getName().equals(args.get("n"));
+        } else if ("regex".equals(args.get("t"))) {
+            condition = p -> p.toFile().getName().matches(args.get("n"));
+        }
         SearchFiles searcher = new SearchFiles(condition);
         Files.walkFileTree(root, searcher);
         List<Path> pathList = searcher.getPaths();
@@ -28,9 +35,9 @@ public class SearchCW {
         if (!Files.exists(path) && !Files.isDirectory(path)) {
             throw new IllegalArgumentException("Root folder is null. Usage ROOT_FOLDER");
         }
-       // if (!"mask".equals(args.get("n")) && !"name".equals(args.get("n")) && !"regex".equals(args.get("n"))) {
-       //     throw new IllegalArgumentException("Use mask or name or regex");
-      //  }
+        if (!"mask".equals(args.get("t")) && !"name".equals(args.get("t")) && !"regex".equals(args.get("t"))) {
+            throw new IllegalArgumentException("Use mask or name or regex");
+        }
         if (!"stdout".equals(args.get("o")) && !args.get("o").endsWith(".txt")) {
             throw new IllegalArgumentException("output not specified as .txt or stdout");
         }
@@ -48,6 +55,7 @@ public class SearchCW {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+            System.out.println("Result write in " + out);
         }
     }
 }
