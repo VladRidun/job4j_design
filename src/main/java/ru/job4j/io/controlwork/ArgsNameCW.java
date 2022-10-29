@@ -44,7 +44,7 @@ public class ArgsNameCW {
     }
 
     public static ArgsNameCW of(String[] args) {
-        ArgsNameCW names = new ArgsNameCW();
+        var names = new ArgsNameCW();
         names.parse(args);
         return names;
     }
