@@ -11,8 +11,9 @@ public class MainCW {
         if (args.length != 4) {
             throw new IllegalArgumentException("Use 4 arguments: root folder, file extension, folder for logfile");
         }
-        ArgsNameCW argsNameCW = ArgsNameCW.of(args);
+        var argsNameCW = ArgsNameCW.of(args);
         validate(argsNameCW);
         search(argsNameCW);
     }
 }
+

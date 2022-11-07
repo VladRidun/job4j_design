@@ -1086,7 +1086,7 @@ c:\Program Files (x86)\Adobe\Acrobat Reader DC\Reader\AcroCEF\COPYING.LGPLv2.1.t
 c:\Program Files (x86)\Adobe\Acrobat Reader DC\Reader\AcroCEF\LICENSE.txt
 c:\Program Files (x86)\Adobe\Acrobat Reader DC\Reader\acrocef_1\COPYING.LGPLv2.1.txt
 c:\Program Files (x86)\Adobe\Acrobat Reader DC\Reader\acrocef_1\LICENSE.txt
-c:\Program Files (x86)\Adobe\Acrobat Reader DC\Reader\WebResources\Resource0\OWP\default\version.txt
+c:\Program Files (x86)\Adobe\Acrobat Reader DC\Reader\WebResources\Resource1\OWP\default\version.txt
 c:\Program Files (x86)\Adobe\Acrobat Reader DC\Resource\TypeSupport\Unicode\Mappings\Adobe\symbol.txt
 c:\Program Files (x86)\Adobe\Acrobat Reader DC\Resource\TypeSupport\Unicode\Mappings\Adobe\zdingbat.txt
 c:\Program Files (x86)\AIMP\history.txt
@@ -1426,10 +1426,12 @@ c:\Program Files (x86)\Java\jre1.8.0_291\THIRDPARTYLICENSEREADME-JAVAFX.txt
 c:\Program Files (x86)\Java\jre1.8.0_291\THIRDPARTYLICENSEREADME.txt
 c:\Program Files (x86)\MERCUSYS\MU6H_1.0\DriverFiles\Driver\Win10X64\LIM_MU6H_1_EU.txt
 c:\Program Files (x86)\MERCUSYS\MU6H_1.0\DriverFiles\Driver\Win10X64\PBR_MU6H_1_EU.txt
-c:\Program Files (x86)\Microsoft\Edge\Application\106.0.1370.52\MLModels\autofill_labeling_features.txt
-c:\Program Files (x86)\Microsoft\Edge\Application\106.0.1370.52\MLModels\autofill_labeling_features_email.txt
+c:\Program Files (x86)\Microsoft\Edge\Application\107.0.1418.24\MLModels\autofill_labeling_features.txt
+c:\Program Files (x86)\Microsoft\Edge\Application\107.0.1418.24\MLModels\autofill_labeling_features_email.txt
 c:\Program Files (x86)\Microsoft\EdgeCore\106.0.1370.52\MLModels\autofill_labeling_features.txt
 c:\Program Files (x86)\Microsoft\EdgeCore\106.0.1370.52\MLModels\autofill_labeling_features_email.txt
+c:\Program Files (x86)\Microsoft\EdgeCore\107.0.1418.24\MLModels\autofill_labeling_features.txt
+c:\Program Files (x86)\Microsoft\EdgeCore\107.0.1418.24\MLModels\autofill_labeling_features_email.txt
 c:\Program Files (x86)\Microsoft\EdgeWebView\Application\106.0.1370.52\MLModels\autofill_labeling_features.txt
 c:\Program Files (x86)\Microsoft\EdgeWebView\Application\106.0.1370.52\MLModels\autofill_labeling_features_email.txt
 c:\Program Files (x86)\Microsoft Office\Office16\Configuration\card_expiration_terms_dict.txt
@@ -1438,6 +1440,8 @@ c:\Program Files (x86)\Microsoft Office\Office16\Configuration\card_terms_dict.t
 c:\Program Files (x86)\Microsoft Office\Office16\Configuration\ssn_high_group_info.txt
 c:\Program Files (x86)\Microsoft Office\Office16\DCF\AccessMessageDismissal.txt
 c:\Program Files (x86)\Microsoft Office\Office16\DCF\ExcelMessageDismissal.txt
+c:\Program Files (x86)\Microsoft Office\Office16\DCF\ru\DatabaseCompare_col.hxt
+c:\Program Files (x86)\Microsoft Office\Office16\DCF\ru\SpreadsheetCompare_col.hxt
 c:\Program Files (x86)\Microsoft Office\Office16\Lync2013_Third_Party_Notices.txt
 c:\Program Files (x86)\RAIDXpert2\apache\ABOUT_APACHE.txt
 c:\Program Files (x86)\RAIDXpert2\apache\INSTALL.txt
@@ -1821,6 +1825,7 @@ c:\Users\VMA\AppData\Local\Google\Chrome\User Data\Default\Service Worker\CacheS
 c:\Users\VMA\AppData\Local\Google\Chrome\User Data\Default\Service Worker\CacheStorage\8d5ebc54717f960b108854df817045d2f3216b0e\index.txt
 c:\Users\VMA\AppData\Local\Google\Chrome\User Data\Default\Service Worker\CacheStorage\8f7abdeb3486c1b8780fede76afc20e044eff1b5\index.txt
 c:\Users\VMA\AppData\Local\Google\Chrome\User Data\Default\Service Worker\CacheStorage\90eb75344c98a9d2ffa2ed0f734e8e4d4a4a9089\index.txt
+c:\Users\VMA\AppData\Local\Google\Chrome\User Data\Default\Service Worker\CacheStorage\91055e5289d45bb3da3e0ab945d2155bfb18cf8d\index.txt
 c:\Users\VMA\AppData\Local\Google\Chrome\User Data\Default\Service Worker\CacheStorage\94a8739473fa748ebb575e3416ce7e93c54fb3c3\index.txt
 c:\Users\VMA\AppData\Local\Google\Chrome\User Data\Default\Service Worker\CacheStorage\961aa296b38fe90a3417c793968cda30d9a973d0\index.txt
 c:\Users\VMA\AppData\Local\Google\Chrome\User Data\Default\Service Worker\CacheStorage\9635a1a261b7093f6c5aa7064679f21b57945c9b\index.txt
@@ -1945,7 +1950,7 @@ c:\Users\VMA\AppData\Local\Microsoft\Edge\User Data\ZxcvbnData\3.0.0.0\passwords
 c:\Users\VMA\AppData\Local\Microsoft\Edge\User Data\ZxcvbnData\3.0.0.0\surnames.txt
 c:\Users\VMA\AppData\Local\Microsoft\Edge\User Data\ZxcvbnData\3.0.0.0\us_tv_and_film.txt
 c:\Users\VMA\AppData\Local\Microsoft\Internet Explorer\brndlog.txt
-c:\Users\VMA\AppData\Local\Microsoft\OneDrive\22.196.0918.0001\ThirdPartyNotices.txt
+c:\Users\VMA\AppData\Local\Microsoft\OneDrive\22.207.1002.0003\ThirdPartyNotices.txt
 c:\Users\VMA\AppData\Local\Microsoft\OneDrive\logs\Common\telemetry-dll-ramp-value.txt
 c:\Users\VMA\AppData\Local\Microsoft\OneDrive\logs\ListSync\Business1\telemetry-dll-ramp-value.txt
 c:\Users\VMA\AppData\Local\Microsoft\OneDrive\logs\Personal\telemetry-dll-ramp-value.txt
@@ -3291,15 +3296,15 @@ c:\Users\VMA\AppData\Local\Packages\Microsoft.Windows.Search_cw5n1h2txyewy\AC\Ap
 c:\Users\VMA\AppData\Local\Packages\Microsoft.Windows.Search_cw5n1h2txyewy\AC\AppCache\I3YTM5BG\487\C__Windows_SystemApps_Microsoft.Windows.Search_cw5n1h2txyewy_cache_Desktop_7[1].txt
 c:\Users\VMA\AppData\Local\Packages\Microsoft.Windows.Search_cw5n1h2txyewy\AC\AppCache\I3YTM5BG\487\C__Windows_SystemApps_Microsoft.Windows.Search_cw5n1h2txyewy_cache_Desktop_8[1].txt
 c:\Users\VMA\AppData\Local\Packages\Microsoft.Windows.Search_cw5n1h2txyewy\AC\AppCache\I3YTM5BG\487\C__Windows_SystemApps_Microsoft.Windows.Search_cw5n1h2txyewy_cache_Desktop_9[1].txt
-c:\Users\VMA\AppData\Local\Packages\Microsoft.Windows.Search_cw5n1h2txyewy\LocalState\ConstraintIndex\Apps_{7ffbb26f-bee8-4328-b912-3dab56a28c06}\0.0.filtertrie.intermediate.txt
-c:\Users\VMA\AppData\Local\Packages\Microsoft.Windows.Search_cw5n1h2txyewy\LocalState\ConstraintIndex\Apps_{7ffbb26f-bee8-4328-b912-3dab56a28c06}\0.1.filtertrie.intermediate.txt
-c:\Users\VMA\AppData\Local\Packages\Microsoft.Windows.Search_cw5n1h2txyewy\LocalState\ConstraintIndex\Apps_{7ffbb26f-bee8-4328-b912-3dab56a28c06}\0.2.filtertrie.intermediate.txt
-c:\Users\VMA\AppData\Local\Packages\Microsoft.Windows.Search_cw5n1h2txyewy\LocalState\ConstraintIndex\Apps_{879ccef0-b604-47fa-9a9e-eab094289e14}\0.0.filtertrie.intermediate.txt
-c:\Users\VMA\AppData\Local\Packages\Microsoft.Windows.Search_cw5n1h2txyewy\LocalState\ConstraintIndex\Apps_{879ccef0-b604-47fa-9a9e-eab094289e14}\0.1.filtertrie.intermediate.txt
-c:\Users\VMA\AppData\Local\Packages\Microsoft.Windows.Search_cw5n1h2txyewy\LocalState\ConstraintIndex\Apps_{879ccef0-b604-47fa-9a9e-eab094289e14}\0.2.filtertrie.intermediate.txt
-c:\Users\VMA\AppData\Local\Packages\Microsoft.Windows.Search_cw5n1h2txyewy\LocalState\ConstraintIndex\Apps_{cd6fa110-7250-48e6-a31a-3d19e7988244}\0.0.filtertrie.intermediate.txt
-c:\Users\VMA\AppData\Local\Packages\Microsoft.Windows.Search_cw5n1h2txyewy\LocalState\ConstraintIndex\Apps_{cd6fa110-7250-48e6-a31a-3d19e7988244}\0.1.filtertrie.intermediate.txt
-c:\Users\VMA\AppData\Local\Packages\Microsoft.Windows.Search_cw5n1h2txyewy\LocalState\ConstraintIndex\Apps_{cd6fa110-7250-48e6-a31a-3d19e7988244}\0.2.filtertrie.intermediate.txt
+c:\Users\VMA\AppData\Local\Packages\Microsoft.Windows.Search_cw5n1h2txyewy\LocalState\ConstraintIndex\Apps_{2fb133c8-00ab-4e6a-8e16-ed8aa2096e5d}\0.0.filtertrie.intermediate.txt
+c:\Users\VMA\AppData\Local\Packages\Microsoft.Windows.Search_cw5n1h2txyewy\LocalState\ConstraintIndex\Apps_{2fb133c8-00ab-4e6a-8e16-ed8aa2096e5d}\0.1.filtertrie.intermediate.txt
+c:\Users\VMA\AppData\Local\Packages\Microsoft.Windows.Search_cw5n1h2txyewy\LocalState\ConstraintIndex\Apps_{2fb133c8-00ab-4e6a-8e16-ed8aa2096e5d}\0.2.filtertrie.intermediate.txt
+c:\Users\VMA\AppData\Local\Packages\Microsoft.Windows.Search_cw5n1h2txyewy\LocalState\ConstraintIndex\Apps_{31f12ff9-ef79-48b2-a5ae-5c98f6bf2f45}\0.0.filtertrie.intermediate.txt
+c:\Users\VMA\AppData\Local\Packages\Microsoft.Windows.Search_cw5n1h2txyewy\LocalState\ConstraintIndex\Apps_{31f12ff9-ef79-48b2-a5ae-5c98f6bf2f45}\0.1.filtertrie.intermediate.txt
+c:\Users\VMA\AppData\Local\Packages\Microsoft.Windows.Search_cw5n1h2txyewy\LocalState\ConstraintIndex\Apps_{31f12ff9-ef79-48b2-a5ae-5c98f6bf2f45}\0.2.filtertrie.intermediate.txt
+c:\Users\VMA\AppData\Local\Packages\Microsoft.Windows.Search_cw5n1h2txyewy\LocalState\ConstraintIndex\Apps_{9418089d-5ad7-4d1f-8b75-54afff768e4c}\0.0.filtertrie.intermediate.txt
+c:\Users\VMA\AppData\Local\Packages\Microsoft.Windows.Search_cw5n1h2txyewy\LocalState\ConstraintIndex\Apps_{9418089d-5ad7-4d1f-8b75-54afff768e4c}\0.1.filtertrie.intermediate.txt
+c:\Users\VMA\AppData\Local\Packages\Microsoft.Windows.Search_cw5n1h2txyewy\LocalState\ConstraintIndex\Apps_{9418089d-5ad7-4d1f-8b75-54afff768e4c}\0.2.filtertrie.intermediate.txt
 c:\Users\VMA\AppData\Local\Packages\Microsoft.Windows.Search_cw5n1h2txyewy\LocalState\ConstraintIndex\Input_{f84d7938-0cbf-4c26-a352-7b1b92d38ca6}\appsconversions.txt
 c:\Users\VMA\AppData\Local\Packages\Microsoft.Windows.Search_cw5n1h2txyewy\LocalState\ConstraintIndex\Input_{f84d7938-0cbf-4c26-a352-7b1b92d38ca6}\appsglobals.txt
 c:\Users\VMA\AppData\Local\Packages\Microsoft.Windows.Search_cw5n1h2txyewy\LocalState\ConstraintIndex\Input_{f84d7938-0cbf-4c26-a352-7b1b92d38ca6}\appssynonyms.txt
@@ -3312,7 +3317,7 @@ c:\Users\VMA\AppData\Local\Packages\Microsoft.Windows.Search_cw5n1h2txyewy\Local
 c:\Users\VMA\AppData\Local\Packages\Microsoft.Windows.Search_cw5n1h2txyewy\LocalState\ConstraintIndex\Settings_{314076e9-13e0-4553-b134-de0ed16f939f}\0.0.filtertrie.intermediate.txt
 c:\Users\VMA\AppData\Local\Packages\Microsoft.Windows.Search_cw5n1h2txyewy\LocalState\ConstraintIndex\Settings_{314076e9-13e0-4553-b134-de0ed16f939f}\0.1.filtertrie.intermediate.txt
 c:\Users\VMA\AppData\Local\Packages\Microsoft.Windows.Search_cw5n1h2txyewy\LocalState\ConstraintIndex\Settings_{314076e9-13e0-4553-b134-de0ed16f939f}\0.2.filtertrie.intermediate.txt
-c:\Users\VMA\AppData\Local\Packages\Microsoft.Windows.Search_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache133110100106684244.txt
+c:\Users\VMA\AppData\Local\Packages\Microsoft.Windows.Search_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache133114997192554227.txt
 c:\Users\VMA\AppData\Local\Packages\Microsoft.Windows.Search_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache139412662068918385.txt
 c:\Users\VMA\AppData\Local\Packages\Microsoft.Windows.Search_cw5n1h2txyewy\LocalState\DeviceSearchCache\SettingsCache.txt
 c:\Users\VMA\AppData\Local\Packages\Microsoft.Windows.Search_cw5n1h2txyewy\LocalState\Flighting\FlightingLogging.txt
@@ -3914,6 +3919,19 @@ c:\Users\VMA\Downloads\Вове\NAVIGATOR_veseliiAngliiskii\NAVIGATOR_veseliiAng
 c:\Users\VMA\Downloads\Вове\Баба-Яга За тридевять земель. Начинаем учить английский\about.txt
 c:\Users\VMA\Downloads\Вове\Баба-Яга За тридевять земель. Начинаем учить английский\read me first.txt
 c:\Users\VMA\Downloads\Вове\Баба-Яга За тридевять земель. Начинаем учить английский\Доп. информация.txt
+c:\Users\VMA\Downloads\Дома и во дворе[torrents.ru]\common.cxt
+c:\Users\VMA\Downloads\Дома и во дворе[torrents.ru]\dictionary\same.cxt
+c:\Users\VMA\Downloads\Дома и во дворе[torrents.ru]\dictionary\words.cxt
+c:\Users\VMA\Downloads\Дома и во дворе[torrents.ru]\eng.cxt
+c:\Users\VMA\Downloads\Дома и во дворе[torrents.ru]\food\same.cxt
+c:\Users\VMA\Downloads\Дома и во дворе[torrents.ru]\frig\same.cxt
+c:\Users\VMA\Downloads\Дома и во дворе[torrents.ru]\lng.cxt
+c:\Users\VMA\Downloads\Дома и во дворе[torrents.ru]\mainmenu\same.cxt
+c:\Users\VMA\Downloads\Дома и во дворе[torrents.ru]\memory\cards.cxt
+c:\Users\VMA\Downloads\Дома и во дворе[torrents.ru]\memory\same.cxt
+c:\Users\VMA\Downloads\Дома и во дворе[torrents.ru]\phone\same.cxt
+c:\Users\VMA\Downloads\Дома и во дворе[torrents.ru]\tiptop\same.cxt
+c:\Users\VMA\Downloads\Дома и во дворе[torrents.ru]\utils.cxt
 c:\Users\VMA\MicrosoftEdgeBackups\backups\MicrosoftEdgeBackup20200808\DatastoreBackup\schema.txt
 c:\Users\VMA\MicrosoftEdgeBackups\backups\MicrosoftEdgeBackup20200808\MicrosoftEdgeSettingsBackup.txt
 c:\Windows\Microsoft.NET\Framework\v4.0.30319\ThirdPartyNotices.txt

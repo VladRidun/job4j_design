@@ -13,25 +13,33 @@ import java.util.List;
 import java.util.function.Predicate;
 
 public class SearchCW {
+
     public static void search(ArgsNameCW args) throws IOException {
-        Path root = Path.of(args.get("d"));
-        String out = args.get("o");
+        var root = Path.of(args.get("d"));
+        var out = args.get("o");
         Predicate<Path> condition = null;
+        var typeSearch = args.get("t");
+        var nameFile = args.get("n");
         if ("mask".equals(args.get("t"))) {
-            condition = p -> p.toFile().getName().endsWith(args.get("n"));
-        } else if ("name".equals(args.get("t"))) {
-            condition = p -> p.toFile().getName().equals(args.get("n"));
-        } else if ("regex".equals(args.get("t"))) {
-            condition = p -> p.toFile().getName().matches(args.get("n"));
+            var string = args.get("n");
+            string = string.replace(".", "[.]");
+            string = string.replace("*", ".+");
+            string = string.replace("?", ".");
+            var finalString = string;
+            condition = p -> p.toFile().getName().matches(finalString);
+        } else if ("name".equals(typeSearch)) {
+            condition = p -> p.toFile().getName().equals(nameFile);
+        } else if ("regex".equals(typeSearch)) {
+            condition = p -> p.toFile().getName().matches(nameFile);
         }
-        SearchFiles searcher = new SearchFiles(condition);
+        var searcher = new SearchFiles(condition);
         Files.walkFileTree(root, searcher);
         List<Path> pathList = searcher.getPaths();
         out(out, pathList);
     }
 
     public static void validate(ArgsNameCW args) {
-        Path path = Path.of(args.get("d"));
+        var path = Path.of(args.get("d"));
         if (!Files.exists(path) && !Files.isDirectory(path)) {
             throw new IllegalArgumentException("Root folder is null. Usage ROOT_FOLDER");
         }
@@ -59,3 +67,4 @@ public class SearchCW {
         }
     }
 }
+
