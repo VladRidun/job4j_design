@@ -1,0 +1,1 @@
+insert into cars(producer, model, gosnumber) values('Рено', 'Меган3', 'Т869УР163');
