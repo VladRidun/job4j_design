@@ -5,8 +5,8 @@ create table people(
 
 create table phonenumber(
     id serial primary key,
-    number int,
-	people_id int references people(id) unique
+    number int unique,
+	people_id int references people(id)
 );
 
 insert into people(name) values ('Borka'), ('Masha'), ('Natasha'), ('Oleg'), ('Vika');
