@@ -1,3 +1,4 @@
+
 create table people(
     id serial primary key,
     name varchar(255)
@@ -22,12 +23,12 @@ insert into people(name) values ('Marina');
 insert into people(name) values ('Artem');
 
 
-insert into devices_people(device_id, people_id) values (10,1);
-insert into devices_people(device_id, people_id) values (11,1);
-insert into devices_people(device_id, people_id) values (12,2);
-insert into devices_people(device_id, people_id) values (13,2);
-insert into devices_people(device_id, people_id) values (14,3);
-insert into devices_people(device_id, people_id) values (15,3);
+insert into devices_people(device_id, people_id) values (1,1);
+insert into devices_people(device_id, people_id) values (2,1);
+insert into devices_people(device_id, people_id) values (2,2);
+insert into devices_people(device_id, people_id) values (3,2);
+insert into devices_people(device_id, people_id) values (4,3);
+insert into devices_people(device_id, people_id) values (5,3);
 
 select avg(price) from devices;
 
@@ -36,10 +37,3 @@ from devices_people as dp
 join people p on dp.people_id = p.id 
 join devices d on dp.device_id = d.id
 group by p.name;
-
-select p.name, avg(d.price)
-from devices_people as dp
-join people p on dp.people_id = p.id 
-join devices d on dp.device_id = d.id
-group by p.name
-having avg(d.price) > 5000;
