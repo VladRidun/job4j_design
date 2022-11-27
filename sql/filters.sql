@@ -31,20 +31,29 @@ insert into product(name, type_id, expired_date, price) values('Морожено
 insert into product(name, type_id, expired_date, price) values('Мороженое Ванилька', 3, date '2022-03-09', 78);
 insert into product(name, type_id, expired_date, price) values('Мороженое Фисташечка', 3, date '2022-05-09', 98);
 
-select * from product
+insert into product(name, type_id, expired_date, price) values('Мороженое Gold Dinger', 3, date '2022-12-12', 856);
+insert into product(name, type_id, expired_date, price) values('Сыр дорогущий', 3, date '2022-12-25', 905);
+insert into product(name, type_id, expired_date, price) values('Молоко из Азбуки Вкуса', 3, date '2022-12-27', 876);
 
-select p.name as "Название продукта", p.expired_date as "Тип продукта", p.price as "Цена"
-from product as p where type_id = 1;
+
+select p.name as "Название продукта", t.name as "Тип продукта"
+from product as p 
+join type as t 
+on p.type_id = t.id
+where t.name like '%Сыр%';
 
 select p.name as "Название продукта", p.expired_date as "Тип продукта", p.price as "Цена"
 from product as p where p.name LIKE '%Мороженое%';
 
 select p.name as "Название продукта", p.expired_date as "Тип продукта", p.price as "Цена"
-from product as p where p.expired_date  < '01.11.2022';
+from product as p where p.expired_date  < current_date;
 
-select p.name as "Название продукта", p.price as "Цена"
-from product as p order by p.price desc
-limit 1;
+select p.name as "Название продукта", max(p.price) as "Цена"
+from product as p 
+join type as t 
+on p.type_id = t.id
+group by p.name
+having max(p.price) >= 850;
 
 select t.name as "Тип продукта", count(p.id)
 from product as p 
@@ -69,10 +78,3 @@ select p.name as "Название продукта", t.name as "Тип прод
 from product as p 
 join type as t 
 on p.type_id = t.id;
-
-
-
-
-
-
-
