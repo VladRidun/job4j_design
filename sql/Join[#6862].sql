@@ -94,11 +94,11 @@ left join employees e
 on d.id = e.departments_id   
 where e.name is null;
 
-select * from employees e 
+select e.name as Сотрудник, d.name as Отдел from employees e 
 left join departments d 
 on e.departments_id = d.id;
 
-select * from departments d 
+select e.name as Сотрудник, d.name as Отдел from departments d 
 right join employees e  
 on d.id = e.departments_id;
 
