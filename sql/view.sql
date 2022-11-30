@@ -15,7 +15,7 @@ create table specializations(
 create table doctors(
     id serial primary key,
     name varchar(255),
-    specialization_id int references specializations(id),
+    specialization_id int references specializations(id)
 );
 
 create table card(
@@ -49,4 +49,4 @@ create view show_paceints_with_allergy
          join pacients p on p.id = c.pacient_id
          join diseases dis on dis.id = c.disease_id
          join doctors doc on doc.id = c.doctor_id
-         group by (p.name, dis.name, doc.name) having dis.name = 'Allergy';
+         where dis.name = 'Allergy';
