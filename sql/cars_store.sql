@@ -85,8 +85,8 @@ values ('субару', 4, 3);
 select c.name as Машина, cb.name as Кузов, ce.name as Двигатель, ct.name as Трансмиссия 
 from cars as c 
 left join car_bodies as cb on cb.id = c.body_id
-left join car_engines as ce on ce.id = c.body_id
-left join car_transmissions as ct  on ct.id = c.body_id;
+left join car_engines as ce on ce.id = c.engine_id
+left join car_transmissions as ct  on ct.id = c.transmission_id;
 
 select c.name as Машина, cb.name as Кузов, ce.name as Двигатель, ct.name as Трансмиссия 
 from cars as c 
