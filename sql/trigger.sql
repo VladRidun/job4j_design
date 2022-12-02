@@ -33,21 +33,19 @@ create or replace function nalog2()
     returns trigger as
 $$
     BEGIN
-        update products
-        set price = price + price * 0.2
-        where id=new.id;
+        NEW.price = NEW.price * 1.2;
         return NEW;
     END;
 $$
 LANGUAGE 'plpgsql';
 
 create trigger nalog_before_trigger
-    after insert on products
-    referencing new table as inserted
+    BEFORE insert 
+on products
     for each row
     execute procedure nalog2();
 
-insert into products(name, producer, count, price) values('vivo 25', 'vivo', 2, 25000);
+insert into products(name, producer, count, price) values('vivo 25', 'vivo', 2, 27000);
 
 select * from products;
 
@@ -64,7 +62,7 @@ create or replace function history()
 $$
     BEGIN
         INSERT INTO history_of_price(name,price,date)
-		 VALUES(new.name,new.price,now());
+		 VALUES(NEW.name,NEW.price,current_date);
         return NEW;
     END;
 $$
@@ -72,11 +70,11 @@ LANGUAGE 'plpgsql';
 
 
 create trigger history_trigger
-    after insert on products
-    referencing new table as inserted
+    after insert 
+    on products
     for each row
     execute procedure history();
 
-insert into products(name, producer, count, price) values('vivo 25', 'vivo', 2, 25000);
+insert into products(name, producer, count, price) values('vivo 25', 'vivo', 2, 36000);
 
 select * from history_of_price;
