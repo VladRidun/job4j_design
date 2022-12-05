@@ -27,7 +27,7 @@ select * from products;
 insert into products(name, producer, count, price) values ('product5', 'producer5', 0, 90);
 
 create or replace function f_delete(u_id integer)
-returns integer
+RETURNS VOID 
 language 'plpgsql'
 as
 $$
@@ -38,5 +38,7 @@ $$
 return result;
     end;
 $$;
+
+select f_delete(5);
 
 select* from products;
