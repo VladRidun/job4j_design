@@ -31,8 +31,6 @@ RETURNS VOID
 language 'plpgsql'
 as
 $$
-    declare
-        result integer;
     begin
               DELETE FROM products where id = u_id and products.count < 0 ;
 return result;
