@@ -33,7 +33,6 @@ as
 $$
     begin
               DELETE FROM products where id = u_id and products.count < 0 ;
-return result;
     end;
 $$;
 
