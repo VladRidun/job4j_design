@@ -77,3 +77,5 @@ select * from products;
 rollback to second_savepoint;
 
 select * from products;
+
+commit;
