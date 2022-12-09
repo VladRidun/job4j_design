@@ -48,4 +48,6 @@ move backward 2 from cursor_products;
 
 fetch from cursor_products;
 
+close cursor_products;
+
 commit;
