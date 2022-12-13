@@ -24,7 +24,7 @@ values('Брэд', 'Пит', 58, 'США');
 
 
 select * from customers 
-where age < (select avg(age) from customers);
+where age = (select min(age) from customers);
 
 
 CREATE TABLE orders(
