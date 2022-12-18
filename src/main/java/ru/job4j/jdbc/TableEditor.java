@@ -27,7 +27,7 @@ public class TableEditor implements AutoCloseable {
         connection = DriverManager.getConnection(url, username, password);
     }
 
-    public void sqlCRUD(String sql) {
+    public void executeSql(String sql) {
         try (var statement = connection.createStatement()) {
             statement.execute(sql);
         } catch (SQLException e) {
@@ -36,32 +36,34 @@ public class TableEditor implements AutoCloseable {
     }
 
     public void createTable(String tableName) {
-        sqlCRUD("create table if not exists " + tableName + "();");
+        String sql = String.format("create table if not exists " + tableName + "();");
+        executeSql(sql);
     }
 
     public void dropTable(String tableName) {
-        sqlCRUD("drop table " + tableName);
+        String sql = String.format("drop table" + tableName);
+        executeSql("drop table " + tableName);
     }
 
     public void addColumn(String tableName, String columnName, String type) {
         var sql = (String.format(
                 "ALTER TABLE %s ADD COLUMN %s %s", tableName, columnName, type
         ));
-        sqlCRUD(sql);
+        executeSql(sql);
     }
 
     public void dropColumn(String tableName, String columnName) {
         var sql = (String.format(
                 "ALTER TABLE %s DROP COLUMN %s", tableName, columnName
         ));
-        sqlCRUD(sql);
+        executeSql(sql);
     }
 
     public void renameColumn(String tableName, String columnName, String newColumnName) {
         var sql = (String.format(
                 "ALTER TABLE %s RENAME COLUMN %s TO %s", tableName, columnName, newColumnName
         ));
-        sqlCRUD(sql);
+        executeSql(sql);
     }
 
     public static void main(String[] args) throws Exception {
