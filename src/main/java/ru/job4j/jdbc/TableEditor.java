@@ -11,7 +11,7 @@ public class TableEditor implements AutoCloseable {
 
     private Connection connection;
 
-    private static Properties properties;
+    private Properties properties;
 
     public TableEditor(Properties properties) throws SQLException, ClassNotFoundException {
         this.properties = properties;
@@ -36,12 +36,12 @@ public class TableEditor implements AutoCloseable {
     }
 
     public void createTable(String tableName) {
-        String sql = String.format("create table if not exists " + tableName + "();");
+        String sql = String.format("create table if not exists %s ();", tableName);
         executeSql(sql);
     }
 
     public void dropTable(String tableName) {
-        String sql = String.format("drop table" + tableName);
+        String sql = String.format("drop table %s", tableName);
         executeSql("drop table " + tableName);
     }
 
@@ -71,21 +71,22 @@ public class TableEditor implements AutoCloseable {
         try (InputStream in = TableEditor.class.getClassLoader().getResourceAsStream("jdbc.properties")) {
             config.load(in);
         }
-        TableEditor tableEditor = new TableEditor(config);
-        tableEditor.createTable("Customers");
-        System.out.println("Создание таблицы");
-        System.out.println(tableEditor.getTableScheme("Customers"));
-        tableEditor.addColumn("Customers", "Name", "varchar(255)");
-        System.out.println("Добавление столбца");
-        System.out.println(tableEditor.getTableScheme("Customers"));
-        System.out.println("Переименование столбца");
-        tableEditor.renameColumn("Customers", "Name", "First_name");
-        System.out.println(tableEditor.getTableScheme("Customers"));
-        System.out.println("Удаление столбца");
-        tableEditor.dropColumn("Customers",  "First_name");
-        System.out.println(tableEditor.getTableScheme("Customers"));
-        tableEditor.dropTable("Customers");
-        System.out.println("Удаление таблицы");
+        try (TableEditor tableEditor = new TableEditor(config)) {
+            tableEditor.createTable("Customers");
+            System.out.println("Создание таблицы");
+            System.out.println(tableEditor.getTableScheme("Customers"));
+            tableEditor.addColumn("Customers", "Name", "varchar(255)");
+            System.out.println("Добавление столбца");
+            System.out.println(tableEditor.getTableScheme("Customers"));
+            System.out.println("Переименование столбца");
+            tableEditor.renameColumn("Customers", "Name", "First_name");
+            System.out.println(tableEditor.getTableScheme("Customers"));
+            System.out.println("Удаление столбца");
+            tableEditor.dropColumn("Customers", "First_name");
+            System.out.println(tableEditor.getTableScheme("Customers"));
+            tableEditor.dropTable("Customers");
+            System.out.println("Удаление таблицы");
+        }
     }
 
     public String getTableScheme(String tableName) throws Exception {
